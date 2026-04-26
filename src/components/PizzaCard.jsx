@@ -37,13 +37,13 @@ const PizzaCard = ({ item }) => {
       {isPizza ? (
         <Link to={`/pizza/${item.id}`} className="text-decoration-none">
           <div className="pizza-img-container">
-            <Card.Img variant="top" src={item.image} alt={item.name} />
+            <Card.Img variant="top" src={`${import.meta.env.BASE_URL}${item.image}`} alt={item.name} />
           </div>
         </Link>
       ) : (
         <div className="img-container d-flex align-items-center justify-content-center p-3" style={{ height: '200px' }}>
           <Card.Img 
-            src={item.image} 
+            src={`${import.meta.env.BASE_URL}${item.image}`} 
             alt={item.name}
             className="img-fluid h-100 w-auto" 
             style={{ objectFit: 'contain', mixBlendMode: 'multiply' }} 
