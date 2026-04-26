@@ -1,26 +1,24 @@
 import { Link, NavLink } from 'react-router-dom';
 import { ShoppingCart } from 'lucide-react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
-import { useCart } from '../context/CartContext'; // Імпортуємо контекст
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
-  const { totals } = useCart(); // Беремо дані про суму та кількість
+  const { totals } = useCart();
 
   return (
     <Navbar bg="white" expand="lg" className="py-3 shadow-sm sticky-top border-bottom">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold d-flex align-items-center">
-          {/* Логотип */}
           <img
-            src="/logo.png" // Шлях до файлу в папці public
+            src="/logo.png"
             alt="Logo"
-            width="40"      // Налаштуй розмір під себе
+            width="40"
             height="40"
-            className="d-inline-block align-top me-2" // Відступ me-2 від тексту
+            className="d-inline-block align-top me-2"
             style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.2))' }} 
           />
           
-          {/* Текст назви */}
           <span style={{ 
             color: '#ff5e00', 
             fontSize: '1.6rem', 

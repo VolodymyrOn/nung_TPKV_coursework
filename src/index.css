@@ -1,13 +1,9 @@
-/* index.css */
-/* 1. Підключення (краще через link в index.html, але можна і так) */
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap);
 
-/* 2. Застосування до ВСІХ елементів без винятку */
 *, *::before, *::after {
   font-family: 'Montserrat', sans-serif !important;
 }
 
-/* 3. Окремо фіксуємо для body та елементів форм */
 body, input, button, select, textarea, optgroup {
   font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -18,11 +14,9 @@ body, input, button, select, textarea, optgroup {
   --main-orange: #ff5e00;
   --text-dark: #2b2b2b;
   --text-muted: #6c757d;
-  /* Сюди підстав посилання на картинку дерева або абстракцію */
   --main-bg-image: url('/bg_pizzas.jpg');
 }
 
-/* 2. Типографіка */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1rem;
@@ -45,10 +39,9 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: var(--text-dark);
-  /* Фон на весь сайт */
   background-image: var(--main-bg-image);
   background-size: cover;
-  background-attachment: fixed; /* Картки будуть "пливти" над деревом */
+  background-attachment: fixed; 
   background-position: center;
 }
 
@@ -58,7 +51,6 @@ body {
   flex-direction: column;
 }
 
-/* Білі картки з гарною тінню */
 .custom-card {
   background: #ffffff !important;
   border: none !important;
@@ -79,7 +71,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* Футер з окремим фоном */
 footer {
   margin-top: auto;
   background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), var(--main-bg-image);
@@ -88,7 +79,6 @@ footer {
   border-top: 4px solid var(--main-orange);
 }
 
-/* Поля вводу (робимо їх чистими білими) */
 .form-control {
   border-radius: 10px !important;
   padding: 12px !important;
@@ -115,7 +105,6 @@ footer {
   transform: scale(1.03);
 }
 
-/* 3. Картки та Контейнери для фото */
 .custom-card {
   border: none !important;
   border-radius: 20px !important;
@@ -131,9 +120,8 @@ footer {
   box-shadow: var(--shadow-main) !important;
 }
 
-/* Фікс білого фону твоїх PNG */
 .pizza-img-container {
-  background-color: #f0f0f0; /* Світла підкладка, щоб спрацював mix-blend-mode */
+  background-color: #f0f0f0;
   border-radius: 18px;
   margin: 12px;
   display: flex;
@@ -144,7 +132,7 @@ footer {
 }
 
 .pizza-img-container img {
-  mix-blend-mode: multiply; /* Білий фон PNG стає прозорим */
+  mix-blend-mode: multiply;
   max-width: 90%;
   transition: var(--transition);
 }
@@ -153,12 +141,10 @@ footer {
   transform: scale(1.08) rotate(3deg);
 }
 
-/* 4. Кнопки (використовуй свої класи, тут загальні правки) */
 .btn-link {
   text-decoration: none !important;
 }
 
-/* 5. Кошик та Таблиці */
 .table {
   color: var(--text-white) !important;
 }
@@ -174,7 +160,6 @@ footer {
   border: 1px solid rgba(255, 94, 0, 0.2);
 }
 
-/* 6. Анімації та Секції */
 .hero-section {
   border-radius: 30px;
   overflow: hidden;
@@ -196,7 +181,6 @@ footer {
   }
 }
 
-/* 7. Адаптивність */
 @media (max-width: 768px) {
   .hero-section {
     margin: 10px !important;
@@ -213,12 +197,10 @@ footer {
   color: white !important;
 }
 
-/* Робимо іконку всередині акційної картки світлою */
 .promo-card  {
   color: white !important;
 }
 
-/* Текст опису в акційній картці */
 .promo-card .text-muted {
   color: rgba(255, 255, 255, 0.8) !important;
 }
