@@ -1,111 +1,224 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+/* index.css */
+/* 1. Підключення (краще через link в index.html, але можна і так) */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* 2. Застосування до ВСІХ елементів без винятку */
+*, *::before, *::after {
+  font-family: 'Montserrat', sans-serif !important;
+}
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+/* 3. Окремо фіксуємо для body та елементів форм */
+body, input, button, select, textarea, optgroup {
+  font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+:root {
+  --main-orange: #ff5e00;
+  --text-dark: #2b2b2b;
+  --text-muted: #6c757d;
+  /* Сюди підстав посилання на картинку дерева або абстракцію */
+  --main-bg-image: url('/bg_pizzas.jpg');
 }
 
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* 2. Типографіка */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  font-size: calc(1.8rem + 1.5vw);
+  font-weight: 800;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
+
 p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+
+.bg-orange { background-color: var(--orange) !important; }
+
+body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  /* Фон на весь сайт */
+  background-image: var(--main-bg-image);
+  background-size: cover;
+  background-attachment: fixed; /* Картки будуть "пливти" над деревом */
+  background-position: center;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Білі картки з гарною тінню */
+.custom-card {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease;
+}
+
+.custom-card-1 {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Футер з окремим фоном */
+footer {
+  margin-top: auto;
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), var(--main-bg-image);
+  background-size: cover;
+  color: white;
+  border-top: 4px solid var(--main-orange);
+}
+
+/* Поля вводу (робимо їх чистими білими) */
+.form-control {
+  border-radius: 10px !important;
+  padding: 12px !important;
+  border: 1px solid #ddd !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 94, 0, 0.25) !important;
+  border-color: var(--main-orange) !important;
+}
+
+.btn-orange-pill {
+  background-color: var(--main-orange) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  padding: 12px 30px !important;
+  transition: 0.3s !important;
+}
+
+.btn-orange-pill:hover {
+  background-color: #e65500 !important;
+  transform: scale(1.03);
+}
+
+/* 3. Картки та Контейнери для фото */
+.custom-card {
+  border: none !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+  
+}
+
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-main) !important;
+}
+
+/* Фікс білого фону твоїх PNG */
+.pizza-img-container {
+  background-color: #f0f0f0; /* Світла підкладка, щоб спрацював mix-blend-mode */
+  border-radius: 18px;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.pizza-img-container img {
+  mix-blend-mode: multiply; /* Білий фон PNG стає прозорим */
+  max-width: 90%;
+  transition: var(--transition);
+}
+
+.custom-card:hover .pizza-img-container img {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* 4. Кнопки (використовуй свої класи, тут загальні правки) */
+.btn-link {
+  text-decoration: none !important;
+}
+
+/* 5. Кошик та Таблиці */
+.table {
+  color: var(--text-white) !important;
+}
+
+.table td {
+  vertical-align: middle;
+  background-color: transparent !important;
+  border-color: #2e2e2e !important;
+}
+
+.bg-orange-light {
+  background-color: rgba(255, 94, 0, 0.1);
+  border: 1px solid rgba(255, 94, 0, 0.2);
+}
+
+/* 6. Анімації та Секції */
+.hero-section {
+  border-radius: 30px;
+  overflow: hidden;
+  background: #1a1a1a !important;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* 7. Адаптивність */
+@media (max-width: 768px) {
+  .hero-section {
+    margin: 10px !important;
+    border-radius: 15px !important;
+  }
+  
+  .pizza-img-container {
+    margin: 8px;
+  }
+}
+
+.custom-card.promo-card {
+  background: linear-gradient(135deg, #ff5e00 0%, #ff2e00 100%) !important;
+  color: white !important;
+}
+
+/* Робимо іконку всередині акційної картки світлою */
+.promo-card  {
+  color: white !important;
+}
+
+/* Текст опису в акційній картці */
+.promo-card .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
