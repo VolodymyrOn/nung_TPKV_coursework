@@ -12,7 +12,7 @@ const Header = () => {
         <Navbar.Brand as={Link} to="/" className="fw-bold d-flex align-items-center">
           {/* Логотип */}
           <img
-            src="/logo.png" // Шлях до файлу в папці public
+            src={`${import.meta.env.BASE_URL}/logo.png`} // Шлях до файлу в папці public
             alt="Logo"
             width="40"      // Налаштуй розмір під себе
             height="40"

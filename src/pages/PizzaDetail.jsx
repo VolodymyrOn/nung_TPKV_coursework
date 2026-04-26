@@ -61,7 +61,7 @@ const PizzaDetail = () => {
           <Col lg={6} className="text-center mb-4 mb-lg-0">
             <div className="pizza-detail-img-wrapper p-3">
               <img 
-                src={pizza.image} 
+                src={`${import.meta.env.BASE_URL}${pizza.image}`} 
                 alt={pizza.name} 
                 className="img-fluid" 
                 style={{ 

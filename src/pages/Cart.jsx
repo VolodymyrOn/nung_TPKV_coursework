@@ -48,7 +48,7 @@ const Cart = () => {
                     <tr key={item.id}>
                       <td className="ps-4 py-4">
                         <div className="d-flex align-items-center">
-                          <img src={item.image} style={{ width: '60px' }} className="me-3" alt="" />
+                          <img src={`${import.meta.env.BASE_URL}${item.image}`} style={{ width: '60px' }} className="me-3" alt="" />
                           <div>
                             <h6 className="fw-bold mb-0">{item.name}</h6>
                             <div className="text-muted" style={{ fontSize: '0.8rem' }}>
