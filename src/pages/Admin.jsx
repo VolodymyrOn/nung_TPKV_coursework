@@ -215,13 +215,25 @@ const Admin = () => {
                 <td className="py-4" style={{ minWidth: '300px' }}>
                   <div className="mb-3">
                     {order.items?.map((item, idx) => (
-                      <div key={idx} className="d-flex justify-content-between align-items-center bg-light p-2 rounded mb-1 small border">
-                        <span><strong>{item.quantity}x</strong> {item.name} <span className="text-muted">({item.selectedSize || item.size})</span></span>
+                      <div key={idx} className="bg-light p-2 rounded mb-1 small border shadow-sm">
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span>
+                            <strong>{item.quantity}x</strong> {item.name} 
+                            <span className="text-muted ms-1">({item.selectedSize || item.size})</span>
+                          </span>
                         <XCircle 
                           size={14} 
                           className="text-danger cursor-pointer ms-2" 
                           onClick={() => removeItemFromOrder(order, idx)}
                         />
+                      </div>
+
+                      {item.extras && item.extras.trim() !== "" && (
+                        <div className="mt-1 ps-2 border-start border-warning" style={{ fontSize: '12px' }}>
+                          <span className="text-muted">Додатки: </span>
+                          <span className="text-dark fw-500">{item.extras}</span>
+                        </div>
+                      )}
                       </div>
                     ))}
                   </div>

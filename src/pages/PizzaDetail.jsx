@@ -43,6 +43,7 @@ const PizzaDetail = () => {
       extrasNames: selectedExtras.map(e => e.name).join(", ")
     };
     addToCart(productToAdd);
+    navigate('/cart');
   };
 
   return (
